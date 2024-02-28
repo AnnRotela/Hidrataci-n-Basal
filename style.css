@@ -55,7 +55,7 @@ button {
   font-size: 15px;
 	font-weight: bold;
 	padding: 12px 45px;
-	border-radius: 30px;
+	border-radius: 20px;
 	background-color: hwb(36 53% 11% / 0.959);
 	border: 1px solid hwb(36 53% 11% / 0.959);
 	color: #000000;
@@ -75,9 +75,13 @@ button:active {
 }
 
 .resultado{
-    color: #0A81D1;
+    color: #101b22;
     font-weight: bold;
     font-size: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     display: none;
+    border-radius: 25px;
+    background-color: hwb(34 77% 7% / 0.959);
+	border: 1px solid hwb(34 77% 7% / 0.959);
+
 }
