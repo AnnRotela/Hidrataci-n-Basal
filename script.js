@@ -1,11 +1,11 @@
- let button = document.getElementById("calculadora");
+let button = document.getElementById("calculadora");
 
  button.addEventListener("click" , calcular)
 
  function calcular () 
     {
         const input = document.getElementById("peso");
-        const peso = parseInt (input.value);
+        const peso = document.getElementById("peso").value
         const FLU = document.getElementById("flu");
         const MAN = document.getElementById("man");
         const ERROR = document.getElementById("error");
@@ -28,12 +28,13 @@
         input.value = "";
         if (peso > 30 )
         {
-            ERROR.style.display = "block";
-        } else {
             const SC1500 = Math.round (superficieCorporal(peso) * 1500);
             const SC2000 = Math.round(superficieCorporal(peso) * 2000);
             FLU.innerHTML = "SC 1500:" +SC1500 + "cc";
             MAN.innerHTML = "SC 2000:" + SC2000 + "cc";
+            FLU.style.display = 'block';
+            MAN.style.display = 'block'; 
+            
         }
     }
 
@@ -42,13 +43,13 @@
         let volumenDiario;
         if (peso>20 && peso <=30)
         {
-            volumenDiario = 2000 + ((peso-20)*20);
+            volumenDiario = 1500 + ((peso-20)*20);
         }
         else if (peso>10 && peso <=20)
         {
             volumenDiario = 1000 + ((peso-10)*50)
         }
-        else (peso>0 && peso <=10)
+        else if (peso>0 && peso <=10)
         {
             volumenDiario = peso*100;
         }
@@ -61,7 +62,7 @@
         let superficieCorporal  = 0;
         if (resto>30) 
         {
-            ((4 * resto) + 7) / ((resto *1 ) + 90);
+            superficieCorporal = ((4 * resto) + 7) / ((resto *1 ) + 90);
         } 
         return superficieCorporal;
      } 
